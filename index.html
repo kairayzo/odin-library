@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <title>Home | NLA</title>
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="-280 -200 1500 1500" width="48"><path d="M480 996q-78-69-170.5-106T120 853V424q94 0 186.5 43T480 587q81-77 173.5-120T840 424v429q-97 0-189.5 37T480 996Zm3-552q-65 0-109.5-44.5T329 290q0-65 44.5-109.5T483 136q65 0 109.5 44.5T637 290q0 65-44.5 109.5T483 444Z"/></svg>
+            </div>
+            <span>National Library Association</span>
+        </div>
+        <div class="right">
+            <div class="nav">
+                <div>Explore</div>
+                <div>Search</div>
+                <div>Login</div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="heading-container">
+            <span class="heading">Books</span>
+            <span id="add-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32"><path d="M450 856V606H200v-60h250V296h60v250h250v60H510v250h-60Z"/></svg>
+            </span>
+        </div>
+        <div class="cards" id="cards">
+            <!-- <div class="card">
+                <div class="title">title1</div>
+                <div class="subheading">
+                    <div class="author">by author1</div>
+                    <div class="pages">123 pages</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="cover"></div>
+                    <div class="buttons">
+                        <button class="read">
+                            <span>Unread</span>
+                            <img src="/book.svg" alt="book icon">
+                        </button>
+                        <button class="remove">
+                            <span>Remove</span>
+                            <img src="/delete.svg" alt="delete icon">
+                        </button>
+                        <div class="rearrange">
+                            <span>Rearrange</span>
+                            <img src="swap.svg" alt="swap icon">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            
+        </div>
+        <div class="modal" id="modal">
+            <form class="form" action="post" id="form">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="-280 -200 1500 1500" width="48"><path d="M480 996q-78-69-170.5-106T120 853V424q94 0 186.5 43T480 587q81-77 173.5-120T840 424v429q-97 0-189.5 37T480 996Zm3-552q-65 0-109.5-44.5T329 290q0-65 44.5-109.5T483 136q65 0 109.5 44.5T637 290q0 65-44.5 109.5T483 444Z"/></svg>
+                </div>
+                <div class="form-title">Add your books here!</div>
+                <input type="text" name="title" id="title" placeholder="Title *" required>
+                <input type="text" name="author" id="author" placeholder="Author *" required>
+                <input type="number" name="pages" id="pages" placeholder="Pages *" required>
+                <div class="read-container">
+                    <div class="status">Status</div>
+                    <input type="button" value="unread" class="read-btn" name="read" id="read-btn">
+                </div>
+                <input type="submit" value="Submit" class="submit-btn">
+                <div id="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 96 960 960" width="30"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
