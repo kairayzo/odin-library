@@ -106,7 +106,7 @@ function addBookToLibrary(book) {
     const unreadSpan = document.createElement('span')
     unreadSpan.innerHTML = 'Unread'
     const unreadImg = document.createElement('img')
-    unreadImg.src = '/images/book.svg'
+    unreadImg.src = './images/book.svg'
     readBtn.appendChild(unreadSpan)
     readBtn.appendChild(unreadImg)
     readBtn.addEventListener('click', () => book.toggleRead(readBtn))
@@ -116,7 +116,7 @@ function addBookToLibrary(book) {
     const removeSpan = document.createElement('span')
     removeSpan.innerHTML = 'Remove'
     const removeImg = document.createElement('img')
-    removeImg.src = '/images/delete.svg'
+    removeImg.src = './images/delete.svg'
     removeBtn.appendChild(removeSpan)
     removeBtn.appendChild(removeImg)
     removeBtn.addEventListener('click',() => book.remove(removeBtn))
@@ -126,7 +126,7 @@ function addBookToLibrary(book) {
     const rearrangeSpan = document.createElement('span')
     rearrangeSpan.innerHTML = 'Rearrange'
     const rearrangeImg = document.createElement('img')
-    rearrangeImg.src = '/images/swap.svg'
+    rearrangeImg.src = './images/swap.svg'
     rearrangeBtn.appendChild(rearrangeSpan)
     rearrangeBtn.appendChild(rearrangeImg)
     
