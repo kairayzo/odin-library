@@ -36,6 +36,10 @@
     border-radius: 50%;
 }
 
+#form .logo svg {
+    cursor: default;
+}
+
 .right {
     display: flex;
     flex: auto;
@@ -204,16 +208,18 @@
     padding: 0.4rem 1rem;
     border-width: 1px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .submit-btn {
     margin-top: 2rem;
-
+    cursor: pointer;
 }
 
 #close {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
+    cursor: pointer;
 }
 

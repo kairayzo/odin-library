@@ -12,43 +12,79 @@ new Sortable(dragArea, {
     animation: 350
 })
 
-function Book(title, author, pages, read) {
-    // the constructor...
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.id
+class Book {
+    constructor(title, author, pages, read) {
+        this._title = title
+        this._author = author
+        this._pages = pages
+        this._read = read
+    }
 
-    this.toggleRead = function(button){
-        switch (button.firstChild.innerHTML) {
+    get title() {
+        return this._title
+    }
+    set title(title) {
+        this._title = title
+    }
+    
+    get author() {
+        return this._author
+    }
+    set author(author) {
+        this._author = author
+    }
+    
+    get pages() {
+        return this._pages
+    }
+    set pages(pages) {
+        this._pages = pages
+    }
+    
+    get read() {
+        return this._read
+    }
+    set read(read) {
+        this._read = read
+    }
+
+    get id() {
+        return this._id
+    }
+    set id(id) {
+        this._id = id
+    }
+    
+
+    toggleRead = (button) => {
+        switch(button.firstChild.innerHTML) {
             case 'Read':
                 this.read = 'unread'
                 button.firstChild.innerHTML = 'Unread'
-                updateLibrary(this.id, read, 'unread')
+                updateLibrary(this.id, this.read, 'unread')
                 break
-                case 'Unread':
-                    this.read = 'read'
-                    button.firstChild.innerHTML = 'Read'
-                    updateLibrary(this.id, read, 'read')
+            case 'Unread':
+                this.read = 'read'
+                button.firstChild.innerHTML = 'Read'
+                updateLibrary(this.id, this.read, 'read')
                 break
         }
     }
-    
-    this.remove = function(button) {
+
+    remove = (button) => {
         const card = button.parentNode.parentNode.parentNode
         cards.removeChild(card)
         updateLibrary(this.id, 'remove')
     }
 }
 
-function generateRandom(maxLimit = 100000){
+const generateRandom = (maxLimit = 100000) => {
     let rand = Math.random() * maxLimit;  
     rand = Math.floor(rand);
     return rand;
   }
 
-function updateLibrary(id, prop, val=null) {
+const updateLibrary = (id, prop, val=null) => {
     const idx = myLibrary.findIndex((book)=> {return book.id == id})
     if (prop == 'remove') {
         myLibrary.splice(idx,1)
@@ -58,7 +94,7 @@ function updateLibrary(id, prop, val=null) {
     console.log(myLibrary)
 }
 
-function toggleRead() {
+const toggleRead = () => {
     switch (readBtn.value) {
         case 'read':
             readBtn.value = 'unread'
@@ -74,7 +110,7 @@ function toggleRead() {
     }
 }
 
-function addBookToLibrary(book) {
+const addBookToLibrary = (book) => {
     // do stuff here
     const card = document.createElement('div')
     card.classList.add('card')
@@ -148,7 +184,7 @@ function addBookToLibrary(book) {
     console.log(myLibrary)
 }
 
-function submitHandler(e) {
+const submitHandler = (e) => {
     e.preventDefault()
     let title, author, pages, read
     const inputs = form.elements
@@ -181,11 +217,11 @@ function submitHandler(e) {
     console.log(myLibrary)
 }
 
-function handleOpen() {
+const handleOpen = () => {
     modal.style.display = 'flex'
 }
 
-function handleClose() {
+const handleClose = () => {
     modal.style.display = 'none'
 }
 
